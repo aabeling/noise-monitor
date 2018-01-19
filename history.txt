@@ -1,0 +1,224 @@
+abeling@poeppel:~/Projects$ cordova create noise-monitor de.banapple.noisemonitor NoiseMonitor
+Creating a new cordova project.
+abeling@poeppel:~/Projects$ cd noise-monitor/
+abeling@poeppel:~/Projects/noise-monitor$ ls
+config.xml  hooks  package.json  platforms  plugins  res  www
+abeling@poeppel:~/Projects/noise-monitor$ less package.json 
+abeling@poeppel:~/Projects/noise-monitor$ cordova platform add browser
+Using cordova-fetch for cordova-browser@~5.0.1
+Adding browser project...
+Creating Cordova project for cordova-browser:
+        Path: /home/abeling/Projects/noise-monitor/platforms/browser
+        Name: NoiseMonitor
+Discovered plugin "cordova-plugin-whitelist" in config.xml. Adding it to the project
+Installing "cordova-plugin-whitelist" for browser
+Adding cordova-plugin-whitelist to package.json
+Saved plugin info for "cordova-plugin-whitelist" to config.xml
+--save flag or autosave detected
+Saving browser@~5.0.3 into config.xml file ...
+abeling@poeppel:~/Projects/noise-monitor$ cordova platform ls
+Installed platforms:
+  browser 5.0.3
+Available platforms: 
+  android ~7.0.0
+  ios ~4.5.4
+  osx ~4.0.1
+  windows ~5.0.0
+  www ^3.12.0
+abeling@poeppel:~/Projects/noise-monitor$ cordova run browser
+startPage = index.html
+Static file server running @ http://localhost:8000/index.html
+CTRL + C to shut down
+200 /index.html (gzip)
+200 /css/index.css (gzip)
+200 /js/index.js (gzip)
+200 /cordova.js (gzip)
+200 /img/logo.png
+200 /cordova_plugins.js
+304 /index.html
+200 /favicon.ico (gzip)
+304 /css/index.css
+304 /cordova.js
+304 /js/index.js
+304 /img/logo.png
+304 /cordova_plugins.js
+304 /favicon.ico
+304 /favicon.ico
+^C
+abeling@poeppel:~/Projects/noise-monitor$ cordova add android
+abeling@poeppel:~/Projects/noise-monitor$ cordova platform add android
+Using cordova-fetch for cordova-android@~7.0.0
+Adding android project...
+Creating Cordova project for the Android platform:
+        Path: platforms/android
+        Package: de.banapple.noisemonitor
+        Name: NoiseMonitor
+        Activity: MainActivity
+        Android target: android-26
+Subproject Path: CordovaLib
+Subproject Path: app
+Android project created with cordova-android@7.0.0
+Android Studio project detected
+Android Studio project detected
+Installing "cordova-plugin-whitelist" for android
+
+               This plugin is only applicable for versions of cordova-android greater than 4.0. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
+          
+--save flag or autosave detected
+Saving android@~7.0.0 into config.xml file ...
+abeling@poeppel:~/Projects/noise-monitor$ cordova requirements
+Android Studio project detected
+
+Requirements check results for android:
+Java JDK: installed 1.8.0
+Android SDK: installed true
+Android target: installed Google Inc.:Google APIs:19,android-26,android-24,android-23,android-19
+Gradle: installed /usr/share/gradle/bin/gradle
+
+Requirements check results for browser:
+abeling@poeppel:~/Projects/noise-monitor$ cordova build android
+Android Studio project detected
+ANDROID_HOME=/home/abeling/Applications/android/sdk
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+studio
+:wrapper
+
+BUILD SUCCESSFUL
+
+Total time: 7.39 secs
+
+This build could be faster, please consider using the Gradle Daemon: https://docs.gradle.org/2.10/userguide/gradle_daemon.html
+Subproject Path: CordovaLib
+Subproject Path: app
+Downloading https://services.gradle.org/distributions/gradle-4.1-all.zip
+.......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /home/abeling/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1-all.zip to /home/abeling/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew
+Set executable permissions for: /home/abeling/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/bin/gradle
+Starting a Gradle Daemon (subsequent builds will be faster)
+Download https://maven.google.com/com/android/tools/build/gradle/3.0.0/gradle-3.0.0.pom
+Download https://maven.google.com/com/android/tools/build/gradle-core/3.0.0/gradle-core-3.0.0.pom
+Download https://maven.google.com/com/android/tools/build/builder/3.0.0/builder-3.0.0.pom
+Download https://maven.google.com/com/android/tools/external/org-jetbrains/uast/26.0.0/uast-26.0.0.pom
+Download https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib/1.1.3-2/kotlin-stdlib-1.1.3-2.pom
+Download https://maven.google.com/com/android/tools/lint/lint/26.0.0/lint-26.0.0.pom
+Download https://maven.google.com/com/android/tools/build/gradle-api/3.0.0/gradle-api-3.0.0.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.1/asm-5.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-analysis/5.1/asm-analysis-5.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-commons/5.1/asm-commons-5.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-parent/5.1/asm-parent-5.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-util/5.1/asm-util-5.1.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.report/0.7.4.201502262128/org.jacoco.report-0.7.4.201502262128.pom
+Download https://maven.google.com/com/android/databinding/compilerCommon/3.0.0/compilerCommon-3.0.0.pom
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-gradle/5.3.3/proguard-gradle-5.3.3.pom
+Download https://jcenter.bintray.com/com/google/protobuf/protobuf-java/3.0.0/protobuf-java-3.0.0.pom
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-parent/5.3.3/proguard-parent-5.3.3.pom
+Download https://jcenter.bintray.com/com/google/protobuf/protobuf-parent/3.0.0/protobuf-parent-3.0.0.pom
+Download https://maven.google.com/com/android/tools/build/builder-model/3.0.0/builder-model-3.0.0.pom
+Download https://maven.google.com/com/android/tools/build/builder-test-api/3.0.0/builder-test-api-3.0.0.pom
+Download https://maven.google.com/com/android/tools/sdk-common/26.0.0/sdk-common-26.0.0.pom
+Download https://maven.google.com/com/android/tools/sdklib/26.0.0/sdklib-26.0.0.pom
+Download https://maven.google.com/com/android/tools/common/26.0.0/common-26.0.0.pom
+Download https://maven.google.com/com/android/tools/build/manifest-merger/26.0.0/manifest-merger-26.0.0.pom
+Download https://maven.google.com/com/android/tools/ddms/ddmlib/26.0.0/ddmlib-26.0.0.pom
+Download https://maven.google.com/com/android/tools/analytics-library/protos/26.0.0/protos-26.0.0.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.56/bcpkix-jdk15on-1.56.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.pom
+Download https://jcenter.bintray.com/it/unimi/dsi/fastutil/7.2.0/fastutil-7.2.0.pom
+Download https://maven.google.com/com/android/tools/analytics-library/shared/26.0.0/shared-26.0.0.pom
+Download https://maven.google.com/com/android/tools/analytics-library/tracker/26.0.0/tracker-26.0.0.pom
+Download https://maven.google.com/com/android/tools/build/apksig/3.0.0/apksig-3.0.0.pom
+Download https://jcenter.bintray.com/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.pom
+Download https://maven.google.com/com/android/tools/lint/lint-checks/26.0.0/lint-checks-26.0.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava/22.0/guava-22.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava-parent/22.0/guava-parent-22.0.pom
+Download https://maven.google.com/com/android/databinding/baseLibrary/3.0.0/baseLibrary-3.0.0.pom
+Download https://jcenter.bintray.com/org/jetbrains/annotations/13.0/annotations-13.0.pom
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-base/5.3.3/proguard-base-5.3.3.pom
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.3/gson-2.3.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-compress/1.12/commons-compress-1.12.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/39/commons-parent-39.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.2.6/httpclient-4.2.6.pom
+Download https://maven.google.com/com/android/tools/layoutlib/layoutlib-api/26.0.0/layoutlib-api-26.0.0.pom
+Download https://maven.google.com/com/android/tools/repository/26.0.0/repository-26.0.0.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.2.6/httpcomponents-client-4.2.6.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/project/7/project-7.pom
+Download https://maven.google.com/com/android/tools/dvlib/26.0.0/dvlib-26.0.0.pom
+Download https://maven.google.com/com/android/tools/lint/lint-api/26.0.0/lint-api-26.0.0.pom
+Download https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.pom
+Download https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.pom
+Download https://jcenter.bintray.com/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.pom
+Download https://jcenter.bintray.com/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom
+Download https://jcenter.bintray.com/com/google/errorprone/error_prone_parent/2.0.18/error_prone_parent-2.0.18.pom
+Download https://jcenter.bintray.com/org/codehaus/mojo/animal-sniffer-parent/1.14/animal-sniffer-parent-1.14.pom
+Download https://jcenter.bintray.com/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.2.5/httpcore-4.2.5.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-core/4.2.5/httpcomponents-core-4.2.5.pom
+Download https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-reflect/1.1.3-2/kotlin-reflect-1.1.3-2.pom
+Download https://maven.google.com/com/android/tools/external/com-intellij/intellij-core/26.0.0/intellij-core-26.0.0.pom
+Download https://jcenter.bintray.com/org/jetbrains/trove4j/trove4j/20160824/trove4j-20160824.pom
+Download https://maven.google.com/com/android/tools/annotations/26.0.0/annotations-26.0.0.pom
+Download https://maven.google.com/com/android/tools/build/gradle-core/3.0.0/gradle-core-3.0.0.jar
+Download https://maven.google.com/com/android/tools/build/gradle/3.0.0/gradle-3.0.0.jar
+Download https://maven.google.com/com/android/tools/build/builder/3.0.0/builder-3.0.0.jar
+Download https://maven.google.com/com/android/tools/lint/lint/26.0.0/lint-26.0.0.jar
+Download https://maven.google.com/com/android/tools/lint/lint-checks/26.0.0/lint-checks-26.0.0.jar
+Download https://maven.google.com/com/android/tools/lint/lint-api/26.0.0/lint-api-26.0.0.jar
+Download https://maven.google.com/com/android/tools/external/org-jetbrains/uast/26.0.0/uast-26.0.0.jar
+Download https://maven.google.com/com/android/tools/build/gradle-api/3.0.0/gradle-api-3.0.0.jar
+Download https://maven.google.com/com/android/databinding/compilerCommon/3.0.0/compilerCommon-3.0.0.jar
+Download https://maven.google.com/com/android/tools/build/manifest-merger/26.0.0/manifest-merger-26.0.0.jar
+Download https://maven.google.com/com/android/tools/sdk-common/26.0.0/sdk-common-26.0.0.jar
+Download https://maven.google.com/com/android/tools/sdklib/26.0.0/sdklib-26.0.0.jar
+Download https://maven.google.com/com/android/tools/repository/26.0.0/repository-26.0.0.jar
+Download https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-reflect/1.1.3-2/kotlin-reflect-1.1.3-2.jar
+Download https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-stdlib/1.1.3-2/kotlin-stdlib-1.1.3-2.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-analysis/5.1/asm-analysis-5.1.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-commons/5.1/asm-commons-5.1.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-util/5.1/asm-util-5.1.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.1/asm-5.1.jar
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.report/0.7.4.201502262128/org.jacoco.report-0.7.4.201502262128.jar
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-gradle/5.3.3/proguard-gradle-5.3.3.jar
+Download https://maven.google.com/com/android/tools/analytics-library/tracker/26.0.0/tracker-26.0.0.jar
+Download https://maven.google.com/com/android/tools/analytics-library/shared/26.0.0/shared-26.0.0.jar
+Download https://maven.google.com/com/android/tools/analytics-library/protos/26.0.0/protos-26.0.0.jar
+Download https://jcenter.bintray.com/com/google/protobuf/protobuf-java/3.0.0/protobuf-java-3.0.0.jar
+Download https://maven.google.com/com/android/tools/build/builder-model/3.0.0/builder-model-3.0.0.jar
+Download https://maven.google.com/com/android/tools/build/builder-test-api/3.0.0/builder-test-api-3.0.0.jar
+Download https://maven.google.com/com/android/tools/ddms/ddmlib/26.0.0/ddmlib-26.0.0.jar
+Download https://maven.google.com/com/android/tools/layoutlib/layoutlib-api/26.0.0/layoutlib-api-26.0.0.jar
+Download https://maven.google.com/com/android/tools/dvlib/26.0.0/dvlib-26.0.0.jar
+Download https://maven.google.com/com/android/tools/common/26.0.0/common-26.0.0.jar
+Download https://maven.google.com/com/android/tools/build/apksig/3.0.0/apksig-3.0.0.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.56/bcpkix-jdk15on-1.56.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56.jar
+Download https://jcenter.bintray.com/it/unimi/dsi/fastutil/7.2.0/fastutil-7.2.0.jar
+Download https://jcenter.bintray.com/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.jar
+Download https://jcenter.bintray.com/com/google/guava/guava/22.0/guava-22.0.jar
+Download https://maven.google.com/com/android/databinding/baseLibrary/3.0.0/baseLibrary-3.0.0.jar
+Download https://maven.google.com/com/android/tools/annotations/26.0.0/annotations-26.0.0.jar
+Download https://jcenter.bintray.com/org/jetbrains/annotations/13.0/annotations-13.0.jar
+Download https://jcenter.bintray.com/net/sf/proguard/proguard-base/5.3.3/proguard-base-5.3.3.jar
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.3/gson-2.3.jar
+Download https://jcenter.bintray.com/org/apache/commons/commons-compress/1.12/commons-compress-1.12.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.2.6/httpclient-4.2.6.jar
+Download https://jcenter.bintray.com/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+Download https://jcenter.bintray.com/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar
+Download https://jcenter.bintray.com/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+Download https://jcenter.bintray.com/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.2.5/httpcore-4.2.5.jar
+Download https://maven.google.com/com/android/tools/external/com-intellij/intellij-core/26.0.0/intellij-core-26.0.0.jar
+Download https://jcenter.bintray.com/org/jetbrains/trove4j/trove4j/20160824/trove4j-20160824.jar
+publishNonDefault is deprecated and has no effect anymore. All variants are now published.
+WARNING: The specified Android SDK Build Tools version (24.0.3) is ignored, as it is below the minimum supported version (26.0.2) for Android Gradle Plugin 3.0.0.
+Android SDK Build Tools 26.0.2 will be used.
+To suppress this warning, remove "buildToolsVersion '24.0.3'" from your build.gradle file, as each version of the Android Gradle Plugin now has a default version of the build tools.
+Checking the license for package Android SDK Build-Tools 26.0.2 in /home/abeling/Applications/android/sdk/licenses
+License for package Android SDK Build-Tools 26.0.2 accepted.
+Preparing "Install Android SDK Build-Tools 26.0.2 (revision: 26.0.2)".
+^C
+abeling@poeppel:~/Projects/noise-monitor$ ls
+config.xml  hooks  node_modules  package.json  platforms  plugins  res  www
+abeling@poeppel:~/Projects/noise-monitor$ vi config.xml 
+abeling@poeppel:~/Projects/noise-monitor$ 
