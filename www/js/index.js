@@ -88,11 +88,12 @@ var dbMeterCollector = {
         this.sum = 0;
         this.count = 0;
 
+        var id = document.getElementById("id").value;
         var url = document.getElementById("url").value;
-        this.sendValueToUrl(average, url);
+        this.sendValueToUrl(average, id, url);
     },
 
-    sendValueToUrl: function(decibelValue, url) {
+    sendValueToUrl: function(decibelValue, id, url) {
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url, true);
@@ -100,7 +101,7 @@ var dbMeterCollector = {
         xhr.onload = function() {
             console.log(this.responseText);
         };
-        xhr.send(JSON.stringify({ decibelValue: decibelValue }));
+        xhr.send(JSON.stringify({ id: id, decibelValue: decibelValue }));
     }
 
 };
