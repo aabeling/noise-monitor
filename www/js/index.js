@@ -16,9 +16,101 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var dbMeterProxy = {
+
+    methodStart: null,
+
+    initialize: function() {
+
+        /* set the functions depending on the platform */
+        if (cordova.platformId == "browser") {
+            this.methodStart = this.proxyStart;
+        } else {
+            this.methodStart = this.nativeStart;
+        }
+    },
+
+    start: function(callback) {
+
+        this.methodStart(callback);
+    },
+
+    proxyStart: function(callback) {
+
+        /* just return a random value every 100ms */
+        setInterval(function() {
+            var decibelValue = Math.floor((Math.random() * 20) + 40);
+            callback(decibelValue);
+        }, 100);
+    },
+
+    nativeStart: function(callback) {
+
+        /* start the plugin dbmeter */
+        DBMeter.start(callback);
+    }
+};
+dbMeterProxy.initialize();
+
+var dbMeterCollector = {
+
+    count: 0,
+    sum: 0.0,
+
+    /**
+     * Receives a new value which will be added to the overall sum
+     */
+    receive: function(db) {
+
+        this.sum += db;
+        this.count++;
+    },
+
+    start: function() {
+
+        /* see https://stackoverflow.com/questions/2749244/javascript-setinterval-and-this-solution */
+        setInterval((function(self) {
+            return function() {
+                self.sendValue();
+            }
+        })(this), 5000);
+
+    },
+
+    sendValue: function() {
+
+        var average = 0.0;
+        if (this.count > 0) {
+            average = this.sum / this.count;
+        }
+
+        document.getElementById("lastAverage").innerHTML = average;
+        this.sum = 0;
+        this.count = 0;
+
+        var url = document.getElementById("url").value;
+        this.sendValueToUrl(average, url);
+    },
+
+    sendValueToUrl: function(decibelValue, url) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-type', 'application/json');
+        xhr.onload = function() {
+            console.log(this.responseText);
+        };
+        xhr.send(JSON.stringify({ decibelValue: decibelValue }));
+    }
+
+};
+dbMeterCollector.start();
+
 var app = {
+
     // Application Constructor
     initialize: function() {
+
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
@@ -28,6 +120,17 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+
+        document.getElementById("platformId").innerHTML =
+            "platform: " + cordova.platformId;
+
+        dbMeterProxy.start(function(dB) {
+
+            var decibelValueElement = document.getElementById("decibelvalue");
+            decibelValueElement.innerHTML = "decibelValue: " + dB;
+
+            dbMeterCollector.receive(dB);
+        });
     },
 
     // Update DOM on a Received Event
@@ -38,8 +141,6 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
     }
 };
 

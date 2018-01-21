@@ -2,3 +2,4 @@ node_modules/
 .npmignore
 platforms/android/
 platforms/browser/
+plugins/

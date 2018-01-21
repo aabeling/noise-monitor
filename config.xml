@@ -24,6 +24,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="android-minSdkVersion" value="19" />
+    <plugin name="cordova-plugin-dbmeter" spec="^2.1.0" />
     <engine name="browser" spec="^5.0.3" />
     <engine name="android" spec="^7.0.0" />
 </widget>
