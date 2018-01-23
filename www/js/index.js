@@ -73,7 +73,7 @@ var dbMeterCollector = {
             return function() {
                 self.sendValue();
             }
-        })(this), 5000);
+        })(this), 30000);
 
     },
 
