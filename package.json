@@ -1,28 +1,28 @@
 {
-  "name": "de.banapple.noisemonitor",
-  "displayName": "NoiseMonitor",
-  "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Apache Cordova Team",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "cordova-android": "^7.0.0",
-    "cordova-browser": "^5.0.3",
-    "cordova-plugin-dbmeter": "^2.1.0",
-    "cordova-plugin-whitelist": "^1.3.3"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-dbmeter": {}
+    "name": "de.banapple.noisemonitor",
+    "displayName": "NoiseMonitor",
+    "version": "1.0.0",
+    "description": "cordova app to measure sound pressure and transmit it to noise-monitor-server",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "platforms": [
-      "browser",
-      "android"
-    ]
-  }
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-android": "^7.0.0",
+        "cordova-browser": "^5.0.3",
+        "cordova-plugin-dbmeter": "^2.1.0",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-dbmeter": {}
+        },
+        "platforms": [
+            "browser",
+            "android"
+        ]
+    }
 }
