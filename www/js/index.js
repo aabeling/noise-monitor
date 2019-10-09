@@ -98,8 +98,11 @@ var dbMeterCollector = {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.onload = function() {
-            console.log(this.responseText);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                document.getElementById("lastSuccessfulTransmit").innerHTML =
+                    new Date().toISOString();
+            }
         };
         xhr.send(JSON.stringify({ id: id, decibelValue: decibelValue }));
     }
