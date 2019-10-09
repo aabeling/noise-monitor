@@ -128,6 +128,8 @@ var app = {
         document.getElementById("platformId").innerHTML =
             "platform: " + cordova.platformId;
 
+        document.getElementById("id").value = device.uuid;
+
         dbMeterProxy.start(function(dB) {
 
             var decibelValueElement = document.getElementById("decibelvalue");

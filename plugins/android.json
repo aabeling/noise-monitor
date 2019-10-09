@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "de.banapple.noisemonitor"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "de.banapple.noisemonitor"
     }
   },
   "dependent_plugins": {}
